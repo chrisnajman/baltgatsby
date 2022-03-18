@@ -8,6 +8,7 @@ const Pagination = ({ catUri, page, totalPages }) => {
       <h2>
         Page {page} / {totalPages}
       </h2>
+      {console.log(page)}
       <Wrapper isFirst={page === 1}>
         {page > 1 ? (
           <Link to={`${catUri}${page === 2 ? "" : page - 1}`} className="back">
