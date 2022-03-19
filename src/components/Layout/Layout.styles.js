@@ -118,6 +118,6 @@ select {
  *   2) BASE
 */
     body { font-family: "Georgia", serif; line-height: 1.5; }
-    h1,h2,h3,h4,h5,h6,a { font-family: "Roboto", sans-serif; }
+    h1,h2,h3,h4,h5,h6,a { font-family: Arial, sans-serif; }
 
 `

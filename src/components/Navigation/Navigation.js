@@ -16,6 +16,9 @@ const Navigation = () => {
             </li>
           )
         })}
+        <li>
+          <Link to="/contact">Contact</Link>
+        </li>
       </ul>
     </NavigationWrapper>
   )

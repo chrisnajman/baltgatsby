@@ -34,17 +34,18 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        url: `https://chris-najman.co.uk/graphql`,
+        url: `http://gatsbywp3.local/graphql`,
       },
     },
     `gatsby-plugin-styled-components`,
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [`Roboto\:300, 400`],
-        display: `swap`,
-      },
-    },
+    // Removed google fonts plugin because kept getting preload errors.
+    // {
+    //   resolve: `gatsby-plugin-google-fonts`,
+    //   options: {
+    //     fonts: [`Roboto\:300, 400`],
+    //     display: `swap`,
+    //   },
+    // },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

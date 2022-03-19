@@ -5,10 +5,10 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@apollo/client": "^3.5.10",
     "babel-plugin-styled-components": "^2.0.6",
     "gatsby": "^4.8.2",
     "gatsby-plugin-gatsby-cloud": "^4.8.2",
-    "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-image": "^2.8.2",
     "gatsby-plugin-manifest": "^4.8.2",
     "gatsby-plugin-offline": "^5.8.2",
