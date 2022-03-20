@@ -119,7 +119,7 @@ const Contact = () => {
             </form>
 
             <Wrapper>
-              {loading && <p>Loading...</p>}
+              {loading && <p>Sending...</p>}
               {error && (
                 <p>An unknown error has occured, please try again later...</p>
               )}
