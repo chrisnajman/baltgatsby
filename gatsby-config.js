@@ -28,7 +28,7 @@ module.exports = {
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/baltimore-icon.png`, // This path is relative to the root of the site.
       },
     },
     {
@@ -39,13 +39,13 @@ module.exports = {
     },
     `gatsby-plugin-styled-components`,
     // Removed google fonts plugin because kept getting preload errors.
-    // {
-    //   resolve: `gatsby-plugin-google-fonts`,
-    //   options: {
-    //     fonts: [`Roboto\:300, 400`],
-    //     display: `swap`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Roboto\:300, 400`],
+        display: `swap`,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

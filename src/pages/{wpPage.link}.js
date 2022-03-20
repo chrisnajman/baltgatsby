@@ -3,8 +3,7 @@ import { graphql } from "gatsby"
 
 import parse from "html-react-parser"
 import Layout from "../components/Layout/Layout"
-
-import Seo from "../components/seo"
+import SeoHelmet from "../components/SeoHelmet/SeoHelmet"
 
 // 'data' prop is a reserved word in gatsby - to get data from pageQuery
 const PageTemplate = ({ data }) => {
@@ -14,7 +13,10 @@ const PageTemplate = ({ data }) => {
 
   return (
     <Layout>
-      <Seo title={pagePath.title} />
+      <SeoHelmet
+        title={pagePath.title}
+        description={pagePath.metaDescription.metaDescription}
+      />
       <div>
         <h1>{pagePath.title}</h1>
       </div>
@@ -32,6 +34,9 @@ export const pageQuery = graphql`
       id
       databaseId
       title
+      metaDescription {
+        metaDescription
+      }
       content
       featuredImage {
         node {

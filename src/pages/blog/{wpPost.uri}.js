@@ -2,11 +2,12 @@ import React from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 import parse from "html-react-parser"
-import Seo from "../../components/seo"
+// import Seo from "../../components/seo"
 
 import { GatsbyImage } from "gatsby-plugin-image"
 
 // components
+import SeoHelmet from "../../components/SeoHelmet/SeoHelmet"
 import Layout from "../../components/Layout/Layout"
 import BreadCrumb from "../../components/BreadCrumb/BreadCrumb"
 import PostSidebar from "../../components/PostSidebar/PostSidebar"
@@ -44,7 +45,10 @@ const PostTemplate = ({ data }) => {
   const altText = data.post.featuredImage.node.altText
   return (
     <Layout>
-      <Seo title={data.post.title} />
+      <SeoHelmet
+        title={data.post.title}
+        description={data.post.metaDescription.metaDescription}
+      />
       <Wrapper>
         <BreadCrumb
           parent={{
@@ -75,6 +79,9 @@ export default PostTemplate
 export const postQuery = graphql`
   query ($id: String!) {
     post: wpPost(id: { eq: $id }) {
+      metaDescription {
+        metaDescription
+      }
       title
       content
       author {

@@ -1,9 +1,8 @@
 import React, { useState } from "react"
 import { gql } from "@apollo/client"
 import { Mutation } from "@apollo/client/react/components"
+import SeoHelmet from "../components/SeoHelmet/SeoHelmet"
 import Layout from "../components/Layout/Layout"
-import Seo from "../components/seo"
-
 import { Wrapper } from "../components/ContactStyles/Contact.styles"
 
 const CONTACT_MUTATION = gql`
@@ -37,7 +36,7 @@ const Contact = () => {
 
   return (
     <Layout>
-      <Seo title="Contact" />
+      <SeoHelmet title={`Contact`} description={`Contact page`} />
       <h1>Contact</h1>
       <Mutation mutation={CONTACT_MUTATION}>
         {(createSubmission, { loading, error, data }) => (

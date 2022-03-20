@@ -1,10 +1,14 @@
 import React from "react"
 import parse from "html-react-parser"
 import { useHomePageQuery } from "../../hooks/useHomePageQuery"
+import SeoHelmet from "../SeoHelmet/SeoHelmet"
+import Layout from "../Layout/Layout"
 import { StyledImg } from "./HomePage.styles"
 
 const HomePage = () => {
   const data = useHomePageQuery()
+  const metaDescription = data.wpPage.metaDescription.metaDescription
+
   const homeTitle = data.wpPage.title
   const imageData =
     data.wpPage.featuredImage.node.localFile.childImageSharp.gatsbyImageData
@@ -12,11 +16,12 @@ const HomePage = () => {
   const imageAlt = data.wpPage.featuredImage.node.altText
   const homeContent = data.wpPage.content
   return (
-    <div>
+    <Layout>
+      <SeoHelmet title={homeTitle} description={metaDescription} />
       <h1>{homeTitle}</h1>
       <StyledImg image={imageData} alt={imageAlt} />
       <div>{parse(homeContent)}</div>
-    </div>
+    </Layout>
   )
 }
 

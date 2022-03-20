@@ -3,7 +3,7 @@ import parse from "html-react-parser"
 import { Link, graphql } from "gatsby"
 
 // Components
-import Seo from "../components/seo"
+import SeoHelmet from "../components/SeoHelmet/SeoHelmet"
 import Layout from "../components/Layout/Layout"
 import BreadCrumb from "../components/BreadCrumb/BreadCrumb"
 import ArchiveSidebar from "../components/ArchiveSidebar/ArchiveSidebar"
@@ -27,7 +27,10 @@ const archiveTemplate = ({
 }) => {
   return (
     <Layout>
-      <Seo title={`Blog ${emdash} ${catName}`} />
+      <SeoHelmet
+        title={`Blog ${emdash} ${catName}`}
+        description={`All the blog posts in the ${catName} category`}
+      />
       <Wrapper>
         <BreadCrumb parent={{ uri: "/blog/all-posts", title: "blog" }} />
         <ContentWrapper>
@@ -94,3 +97,29 @@ export const pageQuery = graphql`
     }
   }
 `
+/*
+
+This works - and I could copy all of the meta tags used in seo.js BUT
+I don't know how to  add lang="en" to the html tag ...?
+
+query MyQuery {
+  generalSettings {
+    language
+  }
+}
+
+Can't use the above query because it returns 'en_GB', which throws an error!
+Should be 'en-GB'
+
+I think this might get it ...
+
+      <Helmet>
+        <html lang="en-GB" />
+        <title>{`Blog ${emdash} ${catName}`}</title>
+        <meta
+          name="description"
+          content={`All the blog posts in the ${catName} category`}
+        />
+      </Helmet>
+
+*/

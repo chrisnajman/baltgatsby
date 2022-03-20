@@ -45,7 +45,7 @@ export const Menu = styled.ul`
     }
     &-categories {
       list-style: disc;
-      margin-left: 60px;
+      margin-left: 1.5rem;
     }
   }
 `

@@ -6,6 +6,9 @@ export const useHomePageQuery = () => {
       wpPage(databaseId: { eq: 69 }) {
         id
         title
+        metaDescription {
+          metaDescription
+        }
         featuredImage {
           node {
             localFile {

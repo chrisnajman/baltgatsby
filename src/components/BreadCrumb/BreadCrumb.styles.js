@@ -1,8 +1,8 @@
 import styled from "styled-components"
 
 export const Wrapper = styled.nav`
-  font-family: "Teko", Arial, Helvetica, sans-serif;
-  font-weight: 800;
+  /* font-family: "Teko", Arial, Helvetica, sans-serif;
+  font-weight: 800; */
   font-size: 1rem;
   margin: 10px 0;
   padding-left: 0;
