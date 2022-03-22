@@ -97,6 +97,8 @@ select {
     font: inherit;
 }
 
+/* Add default cursor for button */ 
+button { cursor: pointer; }
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
     html:focus-within {

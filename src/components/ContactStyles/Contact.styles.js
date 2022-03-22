@@ -20,5 +20,17 @@ export const Wrapper = styled.div`
     font-weight: 600;
     border-radius: 5px;
     font-family: Arial, sans-serif;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  .success {
+    border: 1px dotted #1b487e;
+    padding: 1rem;
+    width: fit-content;
+    button {
+      margin-left: -1rem;
+    }
   }
 `

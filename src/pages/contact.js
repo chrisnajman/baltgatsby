@@ -34,6 +34,10 @@ const Contact = () => {
   const [emailAddressValue, setEmailAddressValue] = useState("")
   const [messageValue, setMessageValue] = useState("")
 
+  const formReset = () => {
+    window.location.reload()
+  }
+
   return (
     <Layout>
       <SeoHelmet title={`Contact`} description={`Contact page`} />
@@ -42,6 +46,7 @@ const Contact = () => {
         {(createSubmission, { loading, error, data }) => (
           <React.Fragment>
             <form
+              id="contactForm"
               onSubmit={async event => {
                 event.preventDefault()
                 createSubmission({
@@ -53,7 +58,6 @@ const Contact = () => {
                     message: messageValue,
                   },
                 })
-                setFirstNameValue.value = ""
               }}
             >
               <Wrapper>
@@ -65,9 +69,6 @@ const Contact = () => {
                   onChange={event => {
                     setFirstNameValue(event.target.value)
                   }}
-                  onClick={event => {
-                    setFirstNameValue((event.target.value = ""))
-                  }}
                 />
               </Wrapper>
               <Wrapper>
@@ -78,9 +79,6 @@ const Contact = () => {
                   value={lastNameValue}
                   onChange={event => {
                     setLastNameValue(event.target.value)
-                  }}
-                  onClick={event => {
-                    setLastNameValue((event.target.value = ""))
                   }}
                 />
               </Wrapper>
@@ -94,9 +92,6 @@ const Contact = () => {
                   onChange={event => {
                     setEmailAddressValue(event.target.value)
                   }}
-                  onClick={event => {
-                    setEmailAddressValue((event.target.value = ""))
-                  }}
                 />
               </Wrapper>
               <Wrapper>
@@ -107,9 +102,6 @@ const Contact = () => {
                   value={messageValue}
                   onChange={event => {
                     setMessageValue(event.target.value)
-                  }}
-                  onClick={event => {
-                    setMessageValue((event.target.value = ""))
                   }}
                 ></textarea>
               </Wrapper>
@@ -124,7 +116,12 @@ const Contact = () => {
                 <p>An unknown error has occured, please try again later...</p>
               )}
               {data && (
-                <p id="successMessage">Your details have been submitted.</p>
+                <div className="success">
+                  <p>Your message has been sent.</p>
+                  <Wrapper>
+                    <button onClick={() => formReset()}>Clear form</button>
+                  </Wrapper>
+                </div>
               )}
             </Wrapper>
           </React.Fragment>
